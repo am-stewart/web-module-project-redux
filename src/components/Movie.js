@@ -5,15 +5,14 @@ import { connect } from 'react-redux';
 import { deleteMovie } from './../actions/movieActions'
 
 const Movie = (props) => {
-    console.log('movie props: ', props)
     const { id } = useParams();
     const { push } = useHistory();
 
-    const movies = props.movies;
+    const { movies, deleteMovie } = props;
     const movie = movies.find(movie=>movie.id===Number(id));
     
     const handleDelete = () => {
-        props.deleteMovie(movie.id);
+        deleteMovie(movie.id);
         push('/movies');
     }
 
