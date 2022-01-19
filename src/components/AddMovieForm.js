@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 
 const AddMovieForm = (props) => {
+    console.log(props, 'addmovieform')
     const { push } = useHistory();
 
     const [movie, setMovie] = useState({
@@ -23,7 +24,7 @@ const AddMovieForm = (props) => {
     }
 
     const handleSubmit = (e) => {
-        console.log('handlesubmit')
+        e.preventDefault();
         props.addMovie(movie);
         push('/movies');
     }
@@ -70,4 +71,4 @@ const AddMovieForm = (props) => {
     </div>);
 }
 
-export default connect(null, {addMovie}) (AddMovieForm);
+export default connect(null, { addMovie })(AddMovieForm);

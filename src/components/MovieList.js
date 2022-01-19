@@ -5,6 +5,7 @@ import MovieListItem from './MovieListItem';
 import MovieFooter from './MovieFooter';
 
 const MovieList = (props)=> {
+    console.log('movielist props', props)
     const { movies } = props;
 
     return (
@@ -32,8 +33,9 @@ const MovieList = (props)=> {
     );
 }
 const mapStateToProps = (state) => {
+    console.log('state', state)
     return {
-        movies: state.movies
+        movies: state.movieReducer.movies
     }
 }
 export default connect(mapStateToProps)(MovieList);
