@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const MovieHeader = (props) => {
-    const appTitle = props.appTitle;
-    const displayFavorites = props.displayFavorites;
-    
+    const { appTitle } = props;
+    const { displayFavorites } = props;
+
     return(<div className="table-title">
         <div className="row">
         <div className="col-sm-6">
